@@ -1,0 +1,320 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #006400;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+.container {
+  width: 400px;
+  margin: 30px auto;
+  font-weight: bold;
+  text-align: center;
+position: relative;
+}
+
+.cards {
+  display: flex;
+}
+
+.dealer,
+.player {
+  width: 100px;
+  height: 150px;
+  margin: 10px 50px;
+}
+
+.player {
+  perspective: 130px;
+}
+
+.card {
+  width: 100px;
+  height: 150px;
+  font-size: 50px;
+  line-height: 3.3;
+  border-radius: 10px;
+  background: #fff;
+  height: 100%;
+  line-height: 3.3;
+}
+
+.controls {
+  display: flex;
+}
+
+.controls .high,
+.controls .low {
+  width: 150px;
+  height: 150px;
+  background: #ffd700;
+  margin: 10px 25px;
+  border-radius: 100%;
+  line-height: 5.5;
+  cursor: pointer;
+  color: #696969;
+  font-size: 30px;
+}
+
+.controls .high:hover,
+.controls .low:hover,
+.start_btn:hover {
+  transform: scale(1.1);
+}
+
+#result {
+  width: 300px;
+  height: 50px;
+  margin: 10px auto;
+  line-height: 1.5;
+  font-size: 40px;
+  color: #ffa500;
+}
+
+#card_wrap.open {
+  transform: rotateY(180deg);
+}
+
+#card_wrap {
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: .3s;
+  height: 100%;
+}
+
+.card_front {
+  transform: rotateY(180deg);
+}
+
+.card_back,
+.card_front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.back_red {
+  width: 80px;
+  height: 130px;
+  margin: 10px auto;
+}
+
+#result.hidden {
+  visibility: hidden;
+}
+
+#retry {
+  position: relative;
+  width: 120px;
+  margin: 35px auto;
+cursor: pointer;
+}
+
+#retry:hover .retry_txt{
+transform: translateY(-20px);
+transition: .2s;
+}
+
+#retry .retry_txt {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 40px;
+  z-index: 2;
+  color: #ffa500;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.stock_top {
+  width: 80px;
+  border-bottom: 80px solid #fff;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-radius: 26px 26px 6px 6px / 80px 80px 6px 6px;
+  height: 0;
+  z-index: 2;
+}
+
+.stock_top .stock_back_wrap{
+  position: absolute;
+  bottom: 7px;
+  left: 8px;
+  width: 100px;
+  height: 70px;
+  z-index: 1;
+}
+
+.stock_top .stock_back_wrap img{
+width: 100%;
+height: 100%;
+}
+
+.stock_bottom {
+  position: relative;
+  width: 120px;
+  height: 20px;
+  background: #fff;
+  margin-top: -2px;
+  z-index: 1;
+}
+
+.stock_bottom span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #a9a9a9;
+}
+
+.stock_bottom span:nth-child(2) {
+  top: 2px;
+}
+
+.stock_bottom span:nth-child(3) {
+  top: 4px;
+}
+
+.stock_bottom span:nth-child(4) {
+  top: 6px;
+}
+
+.stock_bottom span:nth-child(5) {
+  top: 8px;
+}
+
+.stock_bottom span:nth-child(6) {
+  top: 10px;
+}
+
+.stock_bottom span:nth-child(7) {
+  top: 12px;
+}
+
+.stock_bottom span:nth-child(8) {
+  top: 14px;
+}
+
+.stock_bottom span:nth-child(9) {
+  top: 16px;
+}
+
+.stock_bottom span:nth-child(10) {
+  top: 18px;
+}
+
+.stock_bottom span:nth-child(11) {
+  top: 20px;
+}
+
+.disabled{
+opacity: .4;
+}
+
+.top_container{
+width: 700px;
+margin: 30px auto;
+}
+
+.start_btn{
+width: 300px;
+background: #ffd700;
+margin: 0 auto;
+}
+
+.start_btn a{
+display: block;
+padding: 5px;
+text-decoration: none;
+text-align: center;
+font-size: 35px;
+color: #696969;
+}
+
+.title{
+width: 400px;
+margin: 10px auto;
+}
+
+.top_img{
+width: 350px;
+margin: 10px auto;
+}
+
+.title img,
+.top_img img{
+width: 100%;
+}
+
+.to_top{
+position: absolute;
+top: 5px;
+left: 5px;
+}
+
+.to_top a{
+text-decoration: none;
+color: #ffa500;
+font-size: 25px;
+}
+
+.to_top::before {
+	position: absolute;
+	top: 0;
+	left: -18px;
+	width: 0;
+	height: 0;
+	content: "";
+	border-right: 10px solid #ffa500;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+
+@media screen and (max-width:700px){
+.container{
+width: 80%;
+}
+.top_container{
+width: 80%;
+}
+.title{
+width: 100%;
+}
+.top_img{
+width: 100%;
+}
+.dealer,
+.player{
+margin: 0 auto;
+}
+#result{
+width: 100%;
+}
+.controls .high,
+.controls .low{
+width: 120px;
+height: 120px;
+margin: 5px auto;
+line-height: 4.5;
+}
+.controls .high:active,
+.controls .low:active,
+.start_btn:active {
+  transform: scale(1.1);
+}
+#retry:active .retry_txt{
+transform: translateY(-20px);
+transition: .2s;
+}
+
+#card_wrap.open .card_back {
+  opacity: 0;
+}
+
+}
